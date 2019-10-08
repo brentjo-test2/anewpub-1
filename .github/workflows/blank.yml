@@ -9,4 +9,4 @@ jobs:
         GITHUB_ACTOR: ${{ github.ACTOR }}
         GITHUB_REPOSITORY: ${{ github.repository }}
       run: |
-        echo hello world
+        echo hello worlds
