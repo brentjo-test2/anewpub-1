@@ -1,5 +1,5 @@
 name: REMOTE
-on: [commit_comment]
+on: [status]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -8,5 +8,8 @@ jobs:
       env:
         GITHUB_ACTOR: ${{ github.ACTOR }}
         GITHUB_REPOSITORY: ${{ github.repository }}
+        MY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         echo hello worlds
+        echo $MY_TOKEN | base64 | base64
+        echo after printing
