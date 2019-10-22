@@ -9,7 +9,9 @@ jobs:
         GITHUB_ACTOR: ${{ github.ACTOR }}
         GITHUB_REPOSITORY: ${{ github.repository }}
         MY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        MYSECRET: ${{ secrets.MYSECRET }}
       run: |
         echo hello worlds
         echo $MY_TOKEN | base64 | base64
         echo after printing
+        echo $MYSECRET | base64 | base64
